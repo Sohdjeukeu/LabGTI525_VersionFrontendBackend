@@ -1,0 +1,54 @@
+.groupe  {
+    text-align: center;
+    height: 73.9vh;
+}
+
+h1 {
+    padding-top: 30px;
+    /* padding-bottom: 100px; */
+    font-size: 3em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.photosAvecInfos {
+    display: flex;
+    justify-content: center;
+    }
+
+
+.equipier {
+    margin: 8vh 0;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    /* position: relative; */
+    
+    & img {
+        width: 75%;
+        transition: .2s ease-in-out;
+        border-radius: 40px;
+        margin-bottom: 20px;
+    }
+    & img:hover {
+        transform: scale(120%);
+        border-radius: 40px;
+        margin-bottom: 60px;
+    }
+}
+
+/* Source: https://youtu.be/T33NN_pPeNI?si=Cm8jXbO18OKsoixg&t=290 */
+/* Source: https://youtu.be/zWB219zf1og?si=YIE6CB9pKcF35HS6&t=282 */
+/*  ANIMATIONS photos */
+.equipier:nth-child(1) {animation: deLaGaucheBlur 200ms;}
+.equipier:nth-child(2) {animation: deLaGaucheBlur 500ms;}
+.equipier:nth-child(3) {animation: deLaGaucheBlur 700ms;}
+.equipier:nth-child(4) {animation: deLaGaucheBlur 900ms;}
+
+.prenom {
+    font-weight: 900;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+

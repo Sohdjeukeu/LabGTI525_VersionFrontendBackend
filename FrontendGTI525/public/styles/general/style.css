@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Montserrat:wght@500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+}
+
+:root {
+    --vert-clair: #2ba93e;
+    --vert-hover: rgb(0, 130, 0);
+    --vert-fonce: #005510;
+    --widthMinBtnNav: 200px;
+    --widthBtnNav: 15vw;
+    --fontSizeNav: 16px;
+    --fontSizeNavActive: 19px;
+}
+
+
+
+/* General */
+header {
+    /* position: relative; */
+    /* bottom: 0; */
+    /* background-color: aqua; */
+    padding-bottom: 40px;
+}
+
+/* Header */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    }
+
+    .material-symbols-outlined {
+        font-size: 30px;
+    }
+
+    .icon-nav {
+        display: flex;
+        transition: all .2s ease;
+        
+        & img {
+            border-radius: 100px;
+            height: 5rem;
+            width: 180px;
+            /* padding: 10px 30px; */
+            object-fit: cover;
+        }
+        &:first-child {
+            border-radius: 100px;
+            /* padding-top: 15px; */
+            margin-left: 30px;
+            margin-right: 20px;
+        }
+        &:last-child {
+            border-radius: 100px;
+            padding: 20px;
+            margin-right: 20px;
+        }
+        &:hover {
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+            border-radius: 100px;
+            transform: scale(120%);
+        }
+    }
+
+        /* Petite flèche à côté de Points d'intérêt */
+        .dropdown:hover .dropbtn i {
+            rotate: 180deg;
+        }
+        i {
+            transition: .0;
+            margin-left: 5px;
+        }
+    
+.nav-liens {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* background-color: wheat; */
+    /* border-radius: 100px; */
+    border-radius: 2em 2em 0;
+    overflow: hidden;
+    margin-top: 12px;
+    height: 50px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 1);
+    /* min-width: 600px; */
+    margin-right: 160px;
+
+    
+    /* https://www.w3schools.com/howto/howto_css_dropdown_navbar.asp */
+    /* https://www.w3schools.com/howto/howto_css_dropdown.asp */
+    /* Dropdown */
+    & a {
+        float: left;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: var(--fontSizeNav);
+        width: var(--widthBtnNav);
+        min-width: var(--widthMinBtnNav);
+        height: 100%;
+    
+        /* border-radius: 5px; */
+        /* margin: 0 5px; */
+        }
+        & a:hover {
+            background-color: var(--vert-hover);
+            color: white;
+            font-size: larger;
+            /* border-radius: 5px; */
+        }
+        & a:active {
+            background-color: var(--vert-fonce);
+        }
+        & #active {
+            background-color: var(--vert-fonce);
+            /* border-radius: 5px; */
+            color: white;
+            font-size: larger;
+            /* position: relative;
+            top: 10px; */
+        }
+}
+
+    .dropdown {
+        float: left;
+        /* margin-left: 5px; */
+        }
+        .dropbtn {
+            font-size: var(--fontSizeNav);
+            border: none;
+            outline: none;
+            padding: 15px;
+            width: var(--widthBtnNav);
+            min-width: var(--widthMinBtnNav);
+            height: 50px;
+            background-color: inherit;
+            font-family: inherit;
+            cursor: pointer;
+        }
+
+        .dropdown #activeDropbtn {
+            padding: unset;
+            padding: 11px;
+            background-color: var(--vert-fonce);
+            color: white;
+            font-size: var(--fontSizeNavActive);
+        }
+
+        .dropdown:hover .dropbtn{
+            background-color: var(--vert-hover);
+            color: white;
+            font-size: var(--fontSizeNavActive);
+            /* padding: unset; */
+            padding: 11px;
+        }
+        .dropdown-contenu {
+            display: none;
+            position: absolute;
+            top: 86px;
+            background: white;
+            width: var(--widthBtnNav);
+            min-width: var(--widthMinBtnNav);
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+
+            & a {
+                float: none;
+                color: black;
+                padding: 14px 16px;
+                display: block;
+                width: auto;
+                border-radius: 5px;
+                margin: 10px 0;
+                transition: all .3s ease;
+
+                &:hover {
+                    font-size: medium;
+                    background-color: var(--vert-hover);
+                    border-radius: 5px;
+                    /* margin: 10px; */  
+                    transform: scale(115%);
+                    box-shadow: 0 10px 5px 0px rgba(0, 0, 0, .3);
+                }
+    
+                &:active {
+                    background-color: var(--vert-fonce);
+                }
+            }
+            
+        }
+
+        .dropdown:hover .dropdown-contenu {
+            display: block;
+        }
+
+ * {
+    /* box-shadow: 0 0 0 3px red inset; */
+ }
+
+/* Body */
+body {
+    min-height: 100vh;
+    font-family: 'Manrope', sans-serif;
+    letter-spacing: 1px;
+}
+
+/* In body */
+a, button {
+    color: black;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 200ms ease;
+    letter-spacing: normal;
+}
+
+h1 {
+    font-size: 25px;
+}
+
+h1, h3 {
+    letter-spacing: normal;
+}
+
+h3 {
+    padding-bottom: 15px;
+}
+
+/* Détails */
+input,
+select {
+    font-size: 15px;
+    font-family: 'Manrope', sans-serif;
+    letter-spacing: 1px;
+    height: 35px;
+}
+
+input[type="date"] {
+    user-select: none;
+    color: transparent;
+    padding-left: 6px;
+    height: 31.8px;
+    width: 280px;
+
+    &::before {
+        color: #999999;
+        content: attr(placeholder);
+    }
+    &:focus,
+    &:valid {
+        color: #666666;
+    }
+    &:focus::before,
+    &:valid::before {
+        content: "" !important;
+        display: none;
+    }
+}
+
+.boutons a{
+    box-shadow: 0px 7px 0px 0px var(--vert-fonce);
+    &:active {
+        translate: 0px 7px;
+        box-shadow: none;
+    }
+}
+
+
+/* ANIMATION */
+#active, #activeDropbtn{animation: navAnimation .2s;}
+
+.dropdown-contenu a:nth-child(1) {animation: drop .1s;}
+.dropdown-contenu a:nth-child(2) {animation: drop .2s;}
+.dropdown-contenu a:nth-child(3) {animation: drop .3s;}
+
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: unset;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 1);
+    width: 100%;
+    background-color: white;
+    }
+    
+    & p {
+        margin-right: 60px;
+    }
+    
+    .socials {
+        padding: 30px 0;
+        margin-left: 30px;
+        & img {
+            transition: .2s ease-in-out;
+            margin: 0 30px;
+            width: 30px;
+            height: 29px;
+        }
+    
+        & img:hover {
+            transform: scale(150%);
+        }
+    }

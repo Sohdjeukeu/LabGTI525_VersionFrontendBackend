@@ -1,0 +1,185 @@
+main {
+    display: flex;
+    /* border: magenta solid 2px; */
+    /* margin: 0; */
+    height: 76.4vh;
+}
+
+.params-tableau {
+    margin: 0 0 2em 3em;
+    }
+
+    /* Inside main */
+    .info-page {
+        height: 130px;
+        width: 350px;
+        margin-bottom: 15px;
+        /* border: magenta solid 2px; */
+        
+        & h1 {
+            padding-bottom: 10px;
+        }
+    }
+
+
+    .compteur-date {
+        height: 95px;
+        /* border: blue solid 2px; */
+        padding-bottom: 20px;
+        margin-right: 10px;
+        }
+
+    .recherche-compteur {
+        /* border: green solid 2px; */
+        }   
+
+        #searchBar { 
+            padding-left: 6px;
+            width: 82%;
+        }
+        #searchBtn {
+            background-color: var(--vert-clair);
+            height: 100%;
+            font-size: 35px;
+            width: 45px;
+            color: white;
+            text-align: center;
+            vertical-align: middle;
+            padding: 2px;
+            border-radius: 2px;
+            user-select: none;
+            cursor: pointer;
+
+            &:hover {
+                background-color: var(--vert-hover);
+            }
+            &:active {
+                background-color: var(--vert-fonce);
+            }
+        }
+
+
+
+.cote-droit {
+    margin-left: 3em;
+    overflow-x: auto;
+    width: 100%;
+}
+
+    /* Boutons au dessus du tableau */
+    .boutons-container {
+        /* border: var(--vert-fonce) solid 1px; */
+        display: flex;
+        justify-content: center;
+        /* margin-right: 270px; */
+        }
+        .onglets {
+            color: var(--vert-clair);
+            border: var(--vert-clair) solid;
+            border-radius: 100px;
+            padding: 10px 50px;
+            margin: 30px 10px;
+            box-shadow: 0px 7px 0px 0px var(--vert-fonce);
+            cursor: pointer;
+            user-select: none;
+
+            &:hover {
+                border: var(--vert-hover) solid;
+                background-color: var(--vert-hover);
+                color: white;
+            }
+        }
+        .onglets:active, .onglet-actif{
+            border: var(--vert-fonce) solid;
+            background-color: var(--vert-fonce);
+            translate: 0 7px;
+            box-shadow: none;
+        }
+        .onglet-actif {
+            color: white;
+            cursor: default;
+            pointer-events: none;
+        }
+
+.contenu-container {
+    /* background-color: lightblue; */
+    border-radius: 10px;
+    overflow: hidden;
+    height: 80.8%;
+    width: 98%;
+    position: relative;
+}
+.carte {
+    /* border: rgb(150, 0, 150) solid 2px; */
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    /* background-color: rgba(211, 211, 211, 0.4); */
+    animation: deLaDroite .5s;
+}
+
+.google-map{
+    padding-bottom: 40.7%;
+
+    & iframe {
+        border-radius: 10px;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+}
+
+
+/* ANIMATIONS */
+    .params-tableau section:nth-child(1) {animation: deLaGauche .2s;}
+    .params-tableau section:nth-child(2) {animation: deLaGauche .4s;}
+    .params-tableau section:nth-child(3) {animation: deLaGauche .6s;}
+
+
+.tableau {
+    /* border: rgb(150, 0, 150) solid 2px; */
+    height: 64vh;
+    background-color: white;
+    /* min-width: 500px; */
+    } 
+    th{padding: 7.3px 20px;}
+    td{padding: 0 20px;}
+
+    td:nth-child(5) {
+        overflow: hidden;
+
+        & .material-symbols-outlined {
+            vertical-align: text-bottom;
+            font-size: 21px;
+            padding-right: 5px;
+        }
+        & button {
+            font-size: var(--fontSizeNav);
+            border: none;
+            text-align: left;
+            font-family: inherit;
+            cursor: pointer;
+            background-color: transparent;
+            padding: 7.3px 100% 7.3px 20px;
+            white-space: nowrap;
+            translate: -20px;
+        }
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.149);
+        }
+        & button:focus {
+            background-color: rgba(0, 0, 0, 0.149);
+        }
+    }
+
+    /* td:hover {
+        background-color: rgba(0, 0, 0, 0.149);
+    } */
+
+    /* espacement */
+    thead th:nth-child(1) {width: 10%;}
+    thead th:nth-child(2) {width: 35%;}
+    thead th:nth-child(3) {width: 20%;}
+    thead th:nth-child(4) {width: 20%;}
+    thead th:nth-child(5) {width: 15%;}

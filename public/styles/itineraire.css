@@ -1,0 +1,217 @@
+main {
+    display: flex;
+    box-sizing: border-box;
+    /* border: magenta solid 2px; */
+    margin-bottom: 13px;
+}
+
+.params-carte {
+    margin: 0 1em 2em 3em;
+    animation: deLaGauche .5s;
+    /* border: red solid; */
+}
+
+/* Inside main */
+.info-page {
+    height: 100px;
+    width: 350px;
+    /* border: magenta solid 2px; */
+}
+
+.info-page h1 {
+    padding-bottom: 15px;
+}
+
+
+
+/* Début réseaux --------------------------------------------------*/
+.reseaux {
+    padding: 50px 0 30px 0;
+    height: 95px;
+    /* border: red solid 2px; */
+}
+
+/* Source: https://uiverse.io/Pradeepsaranbishnoi/slimy-warthog-37 */
+    .choix-reseau div {
+        display: flex;
+        /* flex-wrap: wrap; */
+        /* margin-top: 0.5rem; */
+        /* justify-content: center; */
+    }
+
+    .choix-reseau input[type="radio"] {
+        clip: rect(0 0 0 0);
+        position: absolute;
+        &:checked+span {
+            box-shadow: 0 0 0 0.0625em var(--vert-fonce);
+            background-color: var(--vert-fonce);
+            color: white;
+            letter-spacing: 1px;
+        }
+    }
+
+    .choix-reseau label span {
+        display: block;
+        cursor: pointer;
+        /* background-color: #fff; */
+        padding: 0.375em 1.25em;
+        position: relative;
+        margin-left: .0625em;
+        box-shadow: 0 0 0 0.0625em #b5bfd9;
+        letter-spacing: .05em;
+        color: #3e4963;
+        text-align: center;
+        transition: 110ms ease;
+    }
+
+    .choix-reseau label:first-child span {
+        border-radius: 1em 0 0 1em;
+    }
+
+    .choix-reseau label:last-child span {
+        border-radius: 0 1em 1em 0;
+    }
+/* Fin réseaux -----------------------------------------------------*/
+
+
+
+/* Début voies -------------------------------*/
+.type-voie {
+    /* height: 95px; */
+    /* border: blue solid 2px; */
+    margin-bottom: 40px;
+    }
+
+    label {
+        display: block;
+    }
+
+    .checkbox {
+        vertical-align: text-top;
+        /* position: relative;
+        top: 4px; */
+        height: 24px;
+        width: 20px;
+        margin: 0 0.5rem 0.5rem 0;
+    }
+/* Début voies ------------------------------*/
+
+
+
+/* Début dates ------------------------------*/
+.datePopPeriode {
+    /* height: 200px; */
+    /* border: green solid 2px; */
+}
+
+.dates label {
+    padding-bottom: 7px;
+
+    & span {
+        margin-right: 10px;
+    }
+    }
+    input[type="date"] {
+        width: 70%;
+    }
+    #a span{
+        margin-right: 21px;
+        text-align: center;
+    }
+/* Fin dates -----------------------------*/
+
+
+/* ANIMATIONS */
+.params-carte section:nth-child(1) {animation: deLaGauche .2s;}
+.params-carte section:nth-child(2) {animation: deLaGauche .4s;}
+.params-carte section:nth-child(3) {animation: deLaGauche .6s;}
+.params-carte section:nth-child(4) {animation: deLaGauche .75s;}
+
+
+.carte {
+    /* border: rgb(150, 0, 150) solid 2px; */
+    width: 85vw;
+    height: 73vh;
+    float: right;
+    margin: 1em 2em .4em 0;
+    /* margin-bottom: 250px; */
+
+}
+
+
+.google-map {
+    /* padding-bottom: 47.2%; */
+    position: relative;
+    animation: zoomIn 1s;
+    z-index: 1;
+    height: 100%;
+    border-radius: 10px;
+    & iframe {
+        background-color: rgba(211, 211, 211, 0.4);
+        /* height: 73vmin; */
+        position: absolute;
+    }
+}
+
+/*#modal::backdrop{
+    background-color: rgba(0,0,0,.5);
+}
+
+.modal{
+    position: absolute;
+    left: 55%;
+    top: 60%;
+    max-width: 550px;
+    !*max-width: 700px;*!
+    text-overflow: ellipsis;
+    transform: translate(-50%, -50%);
+    border: 0;
+}*/
+
+/* .modal .entete{
+    display: flex;
+    justify-content: space-between;
+
+}
+.entete h3, .entete span {
+    padding-bottom: 0;
+    color: var(--vert-clair);
+}
+.modal .entete .icon-fermer{
+    font-size: 28px;
+}
+
+.modal .bouton, .entete .icon-fermer:hover{
+    cursor: pointer;
+}
+.modal .divider{
+    height: 1px;
+    margin-top: 15px;
+    background-color: var(--vert-clair);
+} */
+
+/*.modal .bouton{*/
+/*    float: right;*/
+/*    font-size: 15px;*/
+/*    color: white;*/
+/*    border: 0;*/
+/*    background-color: var(--vert-clair);*/
+/*    margin-top: 10px;*/
+/*    padding: 10px 20px;*/
+/*}*/
+
+.modal .body .couleur_titre{
+    display: flex;
+    align-items: center;
+    padding: 15px 15px 0;
+}
+
+.modal .couleur{
+    width: 45px;
+    height: 15px;
+    margin-right: 15px;
+}
+
+.modal .body p{
+    margin-left: 80px;
+}

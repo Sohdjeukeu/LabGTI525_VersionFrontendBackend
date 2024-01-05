@@ -1,0 +1,173 @@
+/* Style de la modal */
+.modal {
+    display: none; 
+    /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 5%; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Close button */
+.close {
+    padding: 5px 20px;
+    color: black;
+    float: right;
+    font-size: 40px;
+    font-weight: bold;
+    user-select: none;
+    border-bottom-left-radius: 20px;
+
+    &:hover,
+    &:focus {
+        border-bottom-left-radius: 20px;
+        padding: 5px 20px;
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    &:hover {
+        background-color: var(--vert-hover);
+    }
+
+    &:active {
+        background-color: var(--vert-fonce);
+    }
+}
+
+
+/* Contenu total du modal */
+.modal-content {
+    position: relative;
+    background-color: white;
+    margin: auto;
+    padding: 5px;
+    border: 1px solid #888;
+    width: 80%;
+    min-width: 1000px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 20px;
+    overflow: hidden;
+    animation: drop 0.4s;
+}
+
+/* Tête du modal */
+.modal-header {
+    padding: 2px 16px;
+    border-bottom: 2px grey solid;
+
+    & h1 {
+        color: var(--vert-fonce);
+        padding: 10px;
+    }
+
+    & span {
+        translate: 21px -10px;
+    }
+}
+
+/* Corps du modal */
+.modal-body {
+    display: flex;
+    /* width: 80vw; */
+    height: 60%;
+    padding: 15px 0;
+    /* background-color: red; */
+}
+
+/* Côté gauche */
+.graphe {
+    /* background-color: purple; */
+    margin: 0 20px ; 
+    width: 100vw;
+    min-width: 600px;
+    }
+    canvas {
+        margin: auto;
+        width: 60vw;
+    }
+
+/* Côté droite */
+.coteDroit {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    .periode {
+        height: 120px;
+        width: 100%;
+        padding: 20px;
+
+        /* background-color: chocolate; */
+        & label span {
+            margin-right: 10px;
+        }
+
+        & input[type="date"] {
+            width: 180px;
+            white-space: none;
+        }
+
+        & input {
+            margin-bottom: 7px;
+        }
+    }
+
+    #a span {
+        margin-right: 21px;
+    }
+
+    .largeur {
+        padding: 20px;
+
+        /* border: #888 2px solid; */
+        & input {
+            vertical-align: text-top;
+            position: relative;
+            top: -7px;
+            width: 20px;
+            margin: 0 0.5rem 0 0;
+        }
+    }
+}
+
+
+/* Footer */
+.modal-footer {
+    height: 50px;
+    /* background-color: yellowgreen; */
+    border-top: 2px grey solid;
+    user-select: none;
+}
+
+#fermer {
+    float: right;
+    color: white;
+    background: var(--vert-clair);
+    border: var(--vert-clair) solid;
+    border-radius: 100px;
+    /* border-radius: 10px; */
+    padding: 10px 50px;
+    margin: 10px;
+    box-shadow: 0px 7px 0px 0px var(--vert-fonce);
+
+    &:hover {
+        border: var(--vert-hover) solid;
+        background-color: var(--vert-hover);
+    }
+
+    &:active {
+        border: var(--vert-fonce) solid;
+        background-color: var(--vert-fonce);
+        translate: 0px 7px;
+        box-shadow: none;
+    }
+}
+

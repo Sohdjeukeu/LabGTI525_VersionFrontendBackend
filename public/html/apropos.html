@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="/public/styles/general/style.css" rel="stylesheet">
+    <link href="/public/styles/general/animation.css" rel="stylesheet">
+    <link href="/public/styles/apropos.css" rel="stylesheet">
+    <title>À propos</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <a class="icon-nav" href="/">
+                <img src="/public/images/COPISTE%20Logo%20-%20Original%20with%20Transparent%20Background.svg" alt="">
+            </a>
+            <div class="nav-liens">
+                <a href="/itineraire">Itinéraire</a>
+                <a href="/statistiques">Statistiques</a>
+                <div class="dropdown">
+                    <button class="dropbtn" onclick="location.href='/pointsdinteret'">Points d'intérêt
+                         <i class="fa fa-caret-down"></i></button>
+                    <div class="dropdown-contenu">
+                        <a href="#lien1"> <span class="material-symbols-outlined">add</span>Ajouter point d'intérêt</a>
+                    </div>
+                </div>
+            </div>
+            <div class="user-div">
+                <div class="dropdown dropdown-user">
+                    <button class="dropbtn" onclick="location.href='/pointsdinteret'">Bienvenue
+                        <i class="fa fa-caret-down"></i></button>
+                    <div class="dropdown-contenu">
+                        <a href="#lien1" id="se_connecter"> <span class="material-symbols-outlined">login</span>Se connecter</a>
+                        <a href="#lien1" id="creer_compte"> <span class="material-symbols-outlined">person_add</span>Créer un compte</a>
+                        <a href="#lien1" id="se_deconnecter"> <span class="material-symbols-outlined">logout</span>Se déconnecter</a>
+                    </div>
+                </div>
+
+                <a class="icon-nav" id="icon_account"><span class="material-symbols-outlined bouton">account_circle</span></a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="apropos">
+            <h1>À propos du projet</h1>
+            <p>Le projet de laboratoire prévu pour cette session consistera à créer une application web spécialement conçue pour afficher des données relatives au réseau cyclable de la ville de Montréal. L'objectif central est de faciliter l'accès à diverses informations, notamment les détails sur les pistes cyclables, les données recueillies par des capteurs concernant le passage des vélos, ainsi que des informations utiles pour les cyclistes, telles que l'emplacement des fontaines à boire ou des ateliers de réparation de vélos.
+                L'application proposera plusieurs fonctionnalités pour répondre à ces besoins. Par exemple, les utilisateurs pourront explorer les itinéraires cyclables en sélectionnant l'option "Itinéraires", ce qui leur permettra d'accéder à des informations exhaustives sur le réseau cyclable de Montréal. De plus, en optant pour l'onglet "Statistiques", ils auront la possibilité de consulter une carte interactive de Montréal affichant les compteurs de vélos, et pourront obtenir des données statistiques spécifiques en cliquant sur un compteur et en définissant la période qui les intéresse.
+                En résumé, l'objectif principal de cette application consiste à offrir une expérience utilisateur optimale aux cyclistes de Montréal, en mettant en avant les pistes cyclables, les données de passage des vélos, et les informations essentielles pour une expérience de cyclisme enrichissante, le tout sur une plateforme web conviviale.
+            </p>
+            <div class="image">
+                <img src="/public/images/Velo1.JPG" alt="">
+                 <h6>credit:VilleDeMontreal</h6>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="socials">
+            <a target="_blank" href="https://twitter.com/" >
+                <img src="/public/images/socials/twitter.svg" alt="Logo Twitter">
+            </a>
+            <a target="_blank" href="https://www.instagram.com/" >
+                <img src="/public/images/socials/instagram.svg" alt="Logo Instagram">
+            </a>
+            <a target="_blank" href="https://www.facebook.com/" >
+                <img src="/public/images/socials/facebook-f.svg" alt="Logo Facebook">
+            </a>
+        </div>
+        <p>@ 2023, GTI525 Groupe 01 - Équipe 10</p>
+    </footer>
+</body>
+
+</html>

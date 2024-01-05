@@ -1,0 +1,75 @@
+.icon-nav:first-child:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.accueil  {
+    /* background: linear-gradient(#93abe3 65%, white); */
+    animation: fade 1s;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    font-size: calc(2em + 2.5vw);
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+}
+.image{
+    /* width: 30vw; */
+    /* width: 50vmax; */
+    height: 350px;
+    padding: 30px 0;
+    }
+    h6 {
+        text-align: left;
+    }
+
+.boutons a {
+    display: inline-block;
+    background: var(--vert-clair);
+    border: var(--vert-clair) solid;
+    border-radius: 100px;
+    /* border-radius: 10px; */
+    padding: 15px 20px;
+    width: 200px;
+    /* height: 30px; */
+    margin: 25px 10px;
+    font-size: x-large;
+    text-align: center;
+
+    &:hover {
+        border: solid var(--vert-hover);
+        background: var(--vert-hover);
+    }
+
+    &:active {
+        border: solid var(--vert-fonce);
+        background: var(--vert-fonce);
+    }
+
+    &:nth-child(1) {
+        color: var(--vert-clair);
+        background: transparent;
+        animation: deLaGauche .5s;
+
+        &:hover {
+            color: white;
+            border: var(--vert-hover) solid;
+            background: var(--vert-hover);
+        }
+
+        &:active {
+            border: var(--vert-fonce) solid;
+            background: var(--vert-fonce);
+        }
+    }
+
+    &:nth-child(2) {
+        color: white;
+        animation: deLaDroite .5s;
+    }
+}

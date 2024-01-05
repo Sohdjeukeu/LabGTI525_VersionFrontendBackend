@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="/public/styles/general/style.css" rel="stylesheet">
+    <link href="/public/styles/general/animation.css" rel="stylesheet">
+    <link href="/public/styles/index.css" rel="stylesheet">
+    <script type="module" defer src="/public/scripts/UserManager.js"></script>
+    <title>Page d'accueil</title>
+</head>
+<!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
+
+<body>
+<dialog class="modal" id="user_modal">
+    <div class="entete">
+        <h3 class="titre" id="modal_title">Inscription</h3>
+        <span class="material-symbols-outlined icon-fermer femer_modale" id="user_modal_icon-fermer">close</span>
+    </div>
+    <div class="divider"></div>
+    <form class="form_inscription" id="user-form">
+        <div class="container_mutiple">
+            <div class="input_container" id="nom_div">
+                <label for="nom_famille">Nom de famille*</label>
+                <input type="text" placeholder="Entrer votre nom de famille" id="nom_famille">
+            </div>
+            <div class="input_container" id="prenom_div">
+                <label for="prenom">Prénom*</label>
+                <input type="text" placeholder="Entrer votre prénom" id="prenom">
+            </div>
+        </div>
+        <div class="container_mutiple">
+            <div class="input_container">
+                <label for="username">Nom d'utilisateur*</label>
+                <input type="text" placeholder="Entrer votre username" id="username">
+            </div>
+            <div class="input_container">
+                <label for="mot_passe">Mot de passe*</label>
+                <input type="password" placeholder="Entrer un mot de passe" id="mot_passe">
+            </div>
+        </div>
+    </form>
+    <div class="divider bottom_divider"></div>
+    <div class="footer">
+        <button class="bouton fermer_modale bouton-annuler" id="user_modal_bouton_annuler">Annuler</button>
+        <button class="bouton" id="user_modal_bouton_enregistrer">Enregistrer</button>
+    </div>
+
+</dialog>
+
+<header>
+    <nav class="navbar">
+        <a class="icon-nav">
+            <img src="/public/images/COPISTE%20Logo%20-%20Black%20with%20Transparent%20Background.svg" alt="">
+        </a>
+        <div class="nav-liens">
+            <a href="itineraire">Itinéraire</a>
+            <a href="statistiques">Statistiques</a>
+            <div class="dropdown">
+                <button class="dropbtn" onclick="location.href='/pointsdinteret'">Points d'intérêt<i
+                        class="fa fa-caret-down">
+
+                </i></button>
+                <div class="dropdown-contenu">
+                    <a href="#lien1"> <span class="material-symbols-outlined">add</span>Ajouter point d'intérêt</a>
+                </div>
+            </div>
+        </div>
+        <div class="user-div">
+            <div class="dropdown dropdown-user">
+                <button class="dropbtn" id="bienvenue">Bienvenue
+                    <i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-contenu">
+                    <a id="se_connecter"> <span class="material-symbols-outlined">login</span>Se connecter</a>
+                    <a id="creer_compte"> <span class="material-symbols-outlined">person_add</span>Créer un compte</a>
+                    <a id="se_deconnecter"> <span class="material-symbols-outlined">logout</span>Se déconnecter</a>
+                </div>
+            </div>
+            <a class="icon-nav" id="icon_account"><span
+                    class="material-symbols-outlined bouton">account_circle</span></a>
+        </div>
+
+    </nav>
+</header>
+<div class="panel_alert" id="alert">
+    <p id="alert_message">salut je vais bien et toi</p>
+</div>
+<div id="page-container">
+    <main>
+        <div class="accueil">
+            <h1>Pédalez vers l'avenir: <br> Itinéraires et Stats Vélo!</h1>
+            <div class="image">
+                <img src="/public/images/Cyclable1.jpg" alt="">
+                <h6>credit:VilleDeMontreal</h6>
+            </div>
+            <div class="boutons">
+                <a href="/equipe">L'équipe</a>
+                <a href="/apropos">En savoir plus</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="socials">
+            <a target="_blank" href="https://twitter.com/">
+                <img src="/public/images/socials/twitter.svg" alt="Logo Twitter">
+            </a>
+            <a target="_blank" href="https://www.instagram.com/">
+                <img src="/public/images/socials/instagram.svg" alt="Logo Instagram">
+            </a>
+            <a target="_blank" href="https://www.facebook.com/">
+                <img src="/public/images/socials/facebook-f.svg" alt="Logo Facebook">
+            </a>
+        </div>
+        <p>@ 2023, GTI525 Groupe 01 - Équipe 10</p>
+    </footer>
+</div>
+</body>
+</html>

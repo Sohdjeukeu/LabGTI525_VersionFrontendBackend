@@ -1,0 +1,81 @@
+.tableau {
+    /* border: rgb(150, 0, 150) solid 2px; */
+    /* height: 60vmin; */
+    /* margin: 1em 2em 1em 3em; */
+    overflow-x: auto;
+    border-radius: 10px 10px 0 10px;
+    animation: deLaDroite .5s;
+    /* Style de la barre de défilement */
+    &::-webkit-scrollbar {width: 20px;}
+    
+    &::-webkit-scrollbar-thumb {
+        height: 40px;
+        border-radius: 0 10px 10px 0;
+        background-color: rgba(81, 81, 81, 0.8);
+    }
+
+    &::-webkit-scrollbar-track {
+        border-left: solid var(--vert-fonce) 2px;
+        border-radius: 0 10px 10px 0;
+        background: rgba(0, 128, 0, 0.104);
+    }
+} 
+
+
+
+/* espacement */
+table {
+    table-layout: fixed;
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+    }
+
+    th {
+        text-align: left;
+        border-bottom: solid black 4px;
+        cursor: pointer;
+        transition: all .2s;
+    }
+
+    td {
+        border-bottom: solid #80808080 1px;
+        animation: up .2s;
+        /* animation: deLaDroite .2s; */
+        /* animation: drop .2s; */
+    }
+    
+    /* tr:nth-child(even) {background: rgba(0, 128, 0, 0.104);}  */
+
+    tbody {
+        border-bottom: solid black 4px;
+    }
+    thead {
+        position: sticky;
+        top: 0;
+        /* background: linear-gradient(to bottom,var(--vert-clair),var(--vert-hover)); */
+        background-color: var(--vert-clair);
+        color: white;
+        user-select: none;
+        /* Enlevé parce que le bouton action dans Statistiques dérange tout dans
+           le tableau de Points d'intérêt */
+           
+        /* th{padding: 7.3px 20px;}
+        td{padding: 0 20px;} */
+    
+        & th:hover {background-color: var(--vert-hover);}
+        
+        & th:active {
+            background-color: var(--vert-fonce);
+            transition: all .2s;
+            /* transform: translateX(10%); */
+            /* transform: translateX(-5%) scaleX(90%); */
+        }
+    }
+
+
+/* ANIMATIONS */
+.params-tableau section:nth-child(1) {animation: deLaGauche .2s;}
+.params-tableau section:nth-child(2) {animation: deLaGauche .4s;}
+.params-tableau section:nth-child(3) {animation: deLaGauche .6s;}
+.params-tableau section:nth-child(4) {animation: deLaGauche .8s;}

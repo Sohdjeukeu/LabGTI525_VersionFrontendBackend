@@ -1,0 +1,76 @@
+main {
+    display: flex;
+    /* border: magenta solid 2px; */
+    /* margin: 0; */
+}
+
+.params-tableau {
+    /* border: magenta solid; */
+    margin-left: 3em;
+    animation: deLaGauche .5s;
+}
+
+/* Inside main */
+    .info-page {
+        /* height: 130px; */
+        width: 420px;
+        margin-bottom: 20px;
+        /* border: magenta solid 2px; */
+        
+        & h1 {
+            padding-bottom: 10px;
+        }
+    }
+
+
+    .territoire {
+        /* height: 330px; */
+        /* border: blue solid 2px; */
+        margin-bottom: 30px;
+        }
+
+        .carte {
+        /* border: rgb(150, 0, 150) solid 2px; */
+        /* height: 290px; */
+        }
+        #map {
+            background-color: rgba(211, 211, 211, 0.4);
+            border-radius: 5px;
+            width: 100%;
+            height: 35em;
+            /* height: 30vh; */
+        }
+
+select {
+    width: 100%;
+    padding-left: 3px;
+}
+    .arrondissement {
+        /* height: 95px; */
+        /* border: blue solid 2px; */
+        margin-bottom: 20px;
+        }
+
+    .type-lieu {
+        height: 95px;   
+        /* border: green solid 2px; */
+        }
+
+
+
+/*      Tableau        */
+.tableau {
+    /* border: rgb(150, 0, 150) solid 2px; */
+    margin: 0 2em .9em 3em;
+    height: 75vmin; 
+    }
+    th,td{padding: 7.3px 20px;}
+
+    /* espacement */
+    thead th:nth-child(1) {width: 3%;}
+    thead th:nth-child(2) {width: 30%;}
+    thead th:nth-child(3) {width: 10%;}
+    thead th:nth-child(4) {width: 25%;}
+    thead th:nth-child(5) {width: 32%;}
+
+    

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+
+    <link href="/public/styles/general/style.css" rel="stylesheet">
+    <link href="/public/styles/general/animation.css" rel="stylesheet">
+    <link href="/public/styles/pointsInterets.css" rel="stylesheet">
+    <link href="/public/styles/general/tableau.css" rel="stylesheet">
+    <title>Points d'intérêts</title>
+    <script type="module" defer src="/public/scripts/dataReaderPI.js"></script>
+    <script defer src="/public/scripts/tri.js"></script>
+    <script type="module" defer src="/public/scripts/UserManager.js"></script>
+
+</head>
+
+<body>
+    <div class="panel_alert" id="alert">
+        <p id="alert_message">salut je vais bien et toi</p>
+    </div>
+    <dialog class="modal" id="modal">
+        <div class="entete">
+            <h3 class="titre">Ajout d'un nouveau point d'intérêt</h3>
+            <span class="material-symbols-outlined icon-fermer femer_modale" id="icon-fermer">close</span>
+        </div>
+        <div class="divider"></div>
+        <div class="modal-body" id="modal_body">
+            <form class="form_point_intérêt">
+                <div class="input_container nom_lieu">
+                    <label for="nom_lieu">Nom du lieu</label>
+                    <input type="text" id="nom_lieu" placeholder="Donnez le nom de votre point d'intérêr">
+                </div>
+                <div class="adresse_container container_mutiple">
+                    <div class="input_container adresse">
+                        <label for="adresse">Adresse</label>
+                        <input type="text" id="adresse" placeholder="12345 Rue GTI525, Montréal, Québec">
+                    </div>
+                    <div class="input_container code_postal">
+                        <label for="code_postal">Code postal</label>
+                        <input type="text" id="code_postal" placeholder="H0M 1N2">
+                    </div>
+                </div>
+                <div class="arrondissement_container container_mutiple">
+                    <div class="input_container arrondissement">
+                        <label for="modal_arrondissement">Arrondissement</label>
+                        <select id="modal_arrondissement">
+
+                        </select>
+                    </div>
+                    <div class="input_container date_implantation">
+                        <label for="date_implantation">Disponible depuis</label>
+                        <input type="date" id="date_implantation" placeholder="Année d'implantation">
+                    </div>
+                </div>
+                <div class="type_lieu_container container_mutiple">
+                    <div class="input_container type_lieu">
+                        <label for="modal_type_lieu">Type de lieu</label>
+                        <select id="modal_type_lieu">
+                            <option>Choisissez le type de lieu</option>
+                            <option>Fontaine à boire</option>
+                            <option>Atelier de réparation</option>
+                        </select>
+                    </div>
+                    <div class="input_container latitude" id="latitude_container">
+                        <label for="latitude">Latitude</label>
+                        <input type="text" id="latitude" placeholder="45.50884">
+                    </div>
+                    <div class="input_container longitude" id="longitude_container">
+                        <label for="longitude">Longitude</label>
+                        <input type="text" id="longitude" placeholder="-73.58781">
+                    </div>
+                </div>
+                <div class="input_container remarques">
+                    <label for="remarques">Remarques</label>
+                    <textarea type="" id="remarques" placeholder="Donnez une remarque"></textarea>
+                </div>
+            </form>
+        </div>
+        <div class="divider bottom_divider"></div>
+        <div class="footer">
+            <button class="bouton fermer_modale" id="modal_bouton_annuler">Annuler</button>
+            <button class="bouton" id="modal_bouton_enregistrer">Enregistrer</button>
+        </div>
+    </dialog>
+    <dialog class="modal" id="modal_carte">
+        <div class="entete">
+            <h3 class="titre" id="carte-modale-title"></h3>
+            <span class="material-symbols-outlined icon-fermer femer_modale" id="icon-fermer-modal-carte">close</span>
+        </div>
+        <div class="divider"></div>
+        <div class="modal-body" id="carte"></div>
+        <div class="divider bottom_divider"></div>
+        <div class="footer">
+            <button class="bouton fermer_modale" id="modalMap_bouton_fermer">Fermer</button>
+        </div>
+    </dialog>
+    <dialog class="modal" id="user_modal">
+        <div class="entete">
+            <h3 class="titre" id="modal_title">Inscription</h3>
+            <span class="material-symbols-outlined icon-fermer femer_modale" id="user_modal_icon-fermer">close</span>
+        </div>
+        <div class="divider"></div>
+        <form class="form_inscription" id="user-form">
+            <div class="container_mutiple">
+                <div class="input_container" id="nom_div">
+                    <label for="nom_famille">Nom de famille*</label>
+                    <input type="text" placeholder="Entrer votre nom de famille" id="nom_famille">
+                </div>
+                <div class="input_container" id="prenom_div">
+                    <label for="prenom">Prénom*</label>
+                    <input type="text" placeholder="Entrer votre prénom" id="prenom">
+                </div>
+            </div>
+            <div class="container_mutiple">
+                <div class="input_container">
+                    <label for="username">Nom d'utilisateur*</label>
+                    <input type="text" placeholder="Entrer votre username" id="username">
+                </div>
+                <div class="input_container">
+                    <label for="mot_passe">Mot de passe*</label>
+                    <input type="password" placeholder="Entrer un mot de passe" id="mot_passe">
+                </div>
+            </div>
+        </form>
+        <div class="divider bottom_divider"></div>
+        <div class="footer">
+            <button class="bouton fermer_modale bouton-annuler" id="user_modal_bouton_annuler">Annuler</button>
+            <button class="bouton" id="user_modal_bouton_enregistrer">Enregistrer</button>
+        </div>
+
+    </dialog>
+
+
+
+    <header>
+        <nav class="navbar">
+            <a class="icon-nav" href="/">
+                <img src="/public/images/COPISTE%20Logo%20-%20Original%20with%20Transparent%20Background.svg" alt="">
+            </a>
+            <div class="nav-liens">
+                <a href="/itineraire">Itinéraire</a>
+                <a href="/statistiques">Statistiques</a>
+                <div class="dropdown">
+                    <button id="activeDropbtn" class="dropbtn" onclick="location.href='/pointsdinteret'">
+                        Points d'intérêt
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-contenu">
+                        <a id="menu_ajouter"> <span class="material-symbols-outlined">add</span>Ajouter un point d'intérêt</a>
+                    </div>
+                </div>
+            </div>
+            <div class="user-div">
+                <div class="dropdown dropdown-user">
+                    <button class="dropbtn" id="bienvenue">Bienvenue
+                        <i class="fa fa-caret-down"></i></button>
+                    <div class="dropdown-contenu">
+                        <a id="se_connecter"> <span class="material-symbols-outlined">login</span>Se connecter</a>
+                        <a id="creer_compte"> <span class="material-symbols-outlined">person_add</span>Créer un
+                            compte</a>
+                        <a id="se_deconnecter"> <span class="material-symbols-outlined">logout</span>Se déconnecter</a>
+                    </div>
+                </div>
+                <a class="icon-nav" id="icon_account"><span
+                        class="material-symbols-outlined bouton">account_circle</span></a>
+            </div>
+        </nav>
+    </header>
+
+    <div id="page-container">
+        <main>
+            <section class="params-tableau">
+                <section class="info-page">
+                    <h1>Points d'intérêt</h1>
+                    <p>Le site propose XYZ lieux d'intérêt qui pourraient être utiles aux amateurs de vélo</p>
+                </section>
+                <section class="territoire">
+                    <h3>Territoires:</h3>
+                    <section class="carte">
+                        <div class="google-map" id="map">
+                        </div>
+                    </section>
+                </section>
+                <section class="arrondissement">
+                    <h3>Arrondissement:</h3>
+                    <label>
+                        <select name="arrondissement" id="selection-arrondissement">
+                            <option>Tout</option>
+                        </select>
+                    </label>
+                </section>
+                <section class="type-lieu">
+                    <h3>Type de lieu:</h3>
+                    <label>
+                        <select name="lieu" id="selection-lieu">
+                            <option>Tout</option>
+                            <option>Fontaine à boire</option>
+                            <option>Atelier de réparation</option>
+                        </select>
+                    </label>
+                </section>
+
+            </section>
+
+
+            <section class="droite">
+
+                <div class="menu">
+                    <div class="sous_menu" id="sous_menu_div">
+                        <span class="material-symbols-outlined sous-menu-item" id="icon_supprimer">delete</span>
+                        <span class="material-symbols-outlined sous-menu-item" id="icon_location">location_on</span>
+                        <span class="material-symbols-outlined sous-menu-item" id="icon_modifier">edit_note</span>
+                    </div>
+                    <div class="menu_plus">
+                        <span class="material-symbols-outlined sous-menu-item" id="menu_plus">menu</span>
+                    </div>
+                </div>
+
+                <section class="tableau">
+                    <table class="ma_table w3-table w3-border w3-hoverlable">
+                        <thead>
+                            <tr>
+                                <th onclick="sortTable(0)">ID</th>
+                                <th onclick="sortTable(1)">Arrondissement</th>
+                                <th onclick="sortTable(2)">Type</th>
+                                <th onclick="sortTable(3)">Nom du lieu</th>
+                                <th onclick="sortTable(4)">Adresse</th>
+                            </tr>
+                        </thead>
+                        <tbody id="donnees"></tbody>
+                    </table>
+                    <div class="w3-container w3-center" id="pagination_container"></div>
+
+                </section>
+
+            </section>
+        </main>
+        <footer>
+            <div class="socials">
+                <a target="_blank" href="https://twitter.com/">
+                    <img src="/public/images/socials/twitter.svg" alt="Logo Twitter">
+                </a>
+                <a target="_blank" href="https://www.instagram.com/">
+                    <img src="/public/images/socials/instagram.svg" alt="Logo Instagram">
+                </a>
+                <a target="_blank" href="https://www.facebook.com/">
+                    <img src="/public/images/socials/facebook-f.svg" alt="Logo Facebook">
+                </a>
+            </div>
+            <p>@ 2023, GTI525 Groupe 01 - Équipe 10</p>
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,223 @@
+main {
+    display: flex;
+    /* border: magenta solid 2px; */
+    /* margin: 0; */
+}
+
+.params-tableau {
+    /* border: magenta solid; */
+    margin-left: 3em;
+    animation: deLaGauche .5s;
+}
+
+/* Inside main */
+.info-page {
+    /* height: 130px; */
+    width: 420px;
+    margin-bottom: 20px;
+    /* border: magenta solid 2px; */
+
+    & h1 {
+        padding-bottom: 10px;
+    }
+}
+
+h1, h3 {
+    margin: 0;
+    font-family: inherit;
+    font-weight: revert;
+}
+
+h3 {
+    font-size: revert;
+}
+
+p {
+    font-size: 16px;
+}
+
+.territoire {
+    /* height: 330px; */
+    /* border: blue solid 2px; */
+    margin-bottom: 30px;
+}
+
+.carte {
+    /* border: rgb(150, 0, 150) solid 2px; */
+    /* height: 290px; */
+}
+
+#map {
+    background-color: rgba(211, 211, 211, 0.4);
+    border-radius: 5px;
+    width: 100%;
+    height: 35em;
+    /* height: 30vh; */
+}
+
+select {
+    width: 100%;
+    padding-left: 3px;
+}
+
+.arrondissement {
+    /* height: 95px; */
+    /* border: blue solid 2px; */
+    margin-bottom: 20px;
+}
+
+.type-lieu {
+    height: 95px;
+    /* border: green solid 2px; */
+}
+
+
+/*      Tableau        */
+.tableau {
+    /* border: rgb(150, 0, 150) solid 2px; */
+    margin: 0 2em .9em 3em;
+    height: 70em;
+}
+
+tr td {
+    height: 10px;
+    text-overflow: ellipsis;
+}
+
+.tableau .row.active, tr:hover {
+    background-color: #cdf6cd;
+    font-weight: bold;
+}
+
+th, td {
+    padding: 7.3px 20px;
+}
+
+/* espacement */
+.w3-table thead th:nth-child(1) {width: 5%;}
+.w3-table thead th:nth-child(2) {width: 30%;}
+.w3-table thead th:nth-child(3) {width: 15%;}
+.w3-table thead th:nth-child(4) {width: 30%;}
+.w3-table thead th:nth-child(5) {width: 35%;}
+
+/* menu de modification et d'ajout*/
+.droite {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.menu {
+    display: flex;
+    margin: 0 30px 20px 0;
+    align-items: center;
+}
+
+.sous-menu-item {
+    /*margin: 0px;*/
+    background-color: green;
+    color: white;
+    border-radius: 100px;
+    font-size: 20px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.sous_menu {
+    visibility: hidden;
+}
+
+#menu_plus {
+    font-size: 35px;
+    margin-left: 5px;
+}
+
+.input_container {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    border-radius: 10px;
+    height: 70px;
+}
+
+.input_container input, .input_container select {
+    padding-left: 5px;
+}
+
+/*.form_point_intérêt .nom_lieu {*/
+/*    width: 700px;*/
+/*}*/
+.modal-body {
+    width: 700px
+}
+
+.container_mutiple {
+    display: flex;
+}
+
+.adresse,
+.arrondissement {
+    flex: 5;
+}
+
+
+.code_postal,
+.latitude,
+.longitude,
+.date_implantation {
+    flex: 1;
+}
+
+.type_lieu {
+    flex: 3;
+}
+
+.longitude,
+.latitude {
+    visibility: visible;
+}
+
+.form_point_intérêt label {
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+#pagination_container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.form_point_intérêt input,
+.form_point_intérêt select,
+.form_point_intérêt textarea {
+    border: 1px solid var(--vert-clair);
+    outline: none;
+}
+
+#modal_bouton_annuler {
+    margin-right: 20px;
+    background-color: white;
+    color: var(--vert-clair);
+}
+
+#menu_ajouter:hover {
+    cursor: pointer;
+}
+
+.active_page,
+.active_page:hover {
+    background-color: var(--vert-clair);
+    color: white;
+}
+
+/* .active_page:hover {
+    background-color: var(--vert-clair);
+    color: white;
+} */
+
+
+#carte{
+    height: 350px;
+    margin-top: 10px;
+}
